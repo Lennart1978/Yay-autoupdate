@@ -1,0 +1,14 @@
+[Unit]
+Description=Yay System Update by user
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+TimeoutStartSec=infinity
+Type=oneshot
+User=lennart
+Environment=DISPLAY=:0 WAYLAND_DISPLAY=wayland-0 XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/usr/local/bin/yay-update.sh
+
+[Install]
+WantedBy=multi-user.target
