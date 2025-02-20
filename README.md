@@ -2,6 +2,7 @@
 Archlinux Yay automatic update Systemd service. The Systemd service "yay-update.service" is configured for Gnome / Wayland, but it can easily be configured for other systems as well.
 When notifications popup, you will hear different sounds (soundcard). The system update starts with a low beep from the speaker, error notifications popup with a high beep.
 In case of available updates, a list of all the updated packages with version informations will appear in a Zenity - info dialog at the center of your screen.
+Detailed information about the update, cleanup and logrotate process is in the log file /tmp/yay-update.log.
 
 ## Requirements:
 The following packages need to be installed:
