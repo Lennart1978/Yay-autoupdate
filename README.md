@@ -7,6 +7,7 @@ In case of available updates, a list of all the updated packages with version in
 The following packages need to be installed:
 "zenity", "libnotify"and "beep".
 If you don't have them installed, the install script notices it and will ask you whether you want to install the missing packages now.
+## Is the output from yay in english ? Then you don't have to change anything. If not, then translate the string "there is nothing to do" in yay-update.sh line 33 to your yay's output language first !
 ```bash
 yay -S zenity libnotify beep
 ```
