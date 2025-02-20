@@ -34,5 +34,7 @@ Update succesful and 2 packages were updated: - notification and Zenity info dia
 ![successful](updatesuccessful.png)
 3 packages were updated - shown with Zenity info dialog
 ![3packages](3packages.png)
+And finally 45 updates:
+![45updates](45updates.png)
 
 2025 Lennart Martens
