@@ -19,7 +19,7 @@ yay -S zenity libnotify beep
 ./install
 ```
 It depends on how fast your internet connetion is ready.
-Just execute the install script and if you get an error during boot, you have to adjust "sleep 5" in /usr/local/bin/yay-update.sh and show-updated.sh.
+Just execute the install script and if you get an error during boot, you have to adjust "sleep 5" in /usr/local/bin/yay-update.sh.
 Increase it from 5 to 8 or 10 or even higher. I have a fast boot with cable connection, so 'sleep 5' is perfect for me.
 Leave a star if you like this good work, that always makes me happy :-)
 
