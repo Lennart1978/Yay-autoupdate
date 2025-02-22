@@ -1,8 +1,8 @@
 #!/bin/bash
-# yay-autoupdate version 1.0 install script
+# yay-autoupdate version 1.1 install script
 # 2025 by Lennart Martens
 
-echo "Yay-autoupdate version 1.0 - installation:"
+echo "Yay-autoupdate version 1.1 - installation:"
 
 # Array containing the packages to check
 packages=("zenity" "libnotify" "beep" "logrotate")
