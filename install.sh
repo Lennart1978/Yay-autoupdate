@@ -5,7 +5,7 @@
 echo "Yay-autoupdate version 1.0 - installation:"
 
 # Array containing the packages to check
-packages=("zenity" "libnotify" "beep")
+packages=("zenity" "libnotify" "beep" "logrotate")
 
 # Array to store missing packages
 missing_packages=()
