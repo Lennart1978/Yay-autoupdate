@@ -1,4 +1,4 @@
-# Yay-autoupdate v1.0
+# Yay-autoupdate v1.1
 **This is more for the advanced Archlinux user! Maybe you need to do a little more work to make sure everything works on your system too. I only tested it on mine so far and it works very well.**
 
 Archlinux Yay automatic update Systemd service. The Systemd service "yay-update.service" is configured for Gnome / Wayland, but it can easily be configured for other systems as well.
@@ -20,11 +20,11 @@ lennart ALL=(ALL) NOPASSWD: ALL
 
 ## Requirements:
 The following packages need to be installed:
-"zenity", "libnotify"and "beep".
+"zenity", "libnotify", "logrotate" and "beep".
 If you don't have them installed, the install script notices it and will ask you whether you want to install the missing packages now.
 **Is the output from yay in english ? Then you don't have to change anything. If not, then translate the string "there is nothing to do" in yay-update.sh line 33 to your yay's output language first !**
 ```bash
-yay -S zenity libnotify beep
+yay -S zenity libnotify beep logrotate
 ```
 
 ## Installation:
@@ -32,9 +32,7 @@ yay -S zenity libnotify beep
 ``` bash
 ./install
 ```
-It depends on how fast your internet connetion is ready.
-Just execute the install script and if you get an error during boot, you have to adjust "sleep 5" in /usr/local/bin/yay-update.sh.
-Increase it from 5 to 8 or 10 or even higher. I have a fast boot with cable connection, so 'sleep 5' is perfect for me.
+
 Leave a star if you like this good work, that always makes me happy :-)
 
 ## Screenshots (Gnome / Wayland):
