@@ -84,6 +84,10 @@ echo "Create empty logfile /tmp/yay-update.log"
 echo "Copy the systemd service"
 sudo cp -v yay-update.service /etc/systemd/system
 
+# Enable NetworkManager-wait-online.service. This is necessary to make shure the connection is ready.
+echo "Enable NetworkManager-wait-online.service"
+sudo systemctl enable NetworkManager-wait-online.service
+
 # Enable the service
 echo "Enable the service"
 sudo systemctl enable yay-update.service
