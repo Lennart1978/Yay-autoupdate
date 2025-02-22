@@ -103,6 +103,4 @@ sudo systemctl status yay-update.service
 # Show final information
 echo "Finished !"
 echo "If there is no error message in the status, yay will perform an update after every boot now and there will be notifications and a summary about the update (if one was available)."
-echo "Adjust the value after 'sleep' if you see an error message during boot, increase it to 8 or 10 or even higher. It depends on how fast your Internet connection is ready."
-echo "I have a fast cable connection and boot, so 'sleep 5' is perfect for me."
 echo "Enjoy !"
