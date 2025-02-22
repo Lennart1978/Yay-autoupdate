@@ -30,7 +30,7 @@ yay -S zenity libnotify beep logrotate
 ## Installation:
 
 ``` bash
-./install
+./install.sh
 ```
 
 Leave a star if you like this good work, that always makes me happy :-)
