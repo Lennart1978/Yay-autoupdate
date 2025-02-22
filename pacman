@@ -1,0 +1,10 @@
+/var/log/pacman.log {
+ weekly
+ rotate 4
+ missingok
+ notifempty
+ nocompress
+ dateext
+ dateformat _%d-%m-%Y
+ create 644 root root
+}
