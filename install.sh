@@ -94,7 +94,7 @@ sudo systemctl enable yay-update.service
 
 # Testrun
 echo "Let's start a testrun ... good luck !"
-sudo systemctl start yay-update.sevice
+sudo systemctl start yay-update.service
 
 # Show the status of the service
 echo "Now show the status of the service, let's see if everything is OK"
