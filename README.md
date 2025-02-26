@@ -77,5 +77,4 @@ Then select option 2 for uninstallation.
 
 ---
 
-2025 Original by Lennart Martens  
-Optimized version with additional features
+2025 by Lennart Martens  
