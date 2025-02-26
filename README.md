@@ -1,52 +1,81 @@
-# Yay-autoupdate v1.1
-**This is more for the advanced Archlinux user! Maybe you need to do a little more work to make sure everything works on your system too. I only tested it on mine so far and it works very well.**
+# Yay-autoupdate v1.2
 
-Archlinux Yay automatic update Systemd service. The Systemd service "yay-update.service" is configured for Gnome / Wayland, but it can easily be configured for other systems as well.
-When notifications popup, you will hear different sounds (soundcard). The system update starts with a low beep from the speaker, error notifications popup with a high beep.
-In case of available updates, a list of all the updated packages with version informations will appear in a Zenity - info dialog at the center of your screen.
-After an update the pacman and yay cache will be cleaned and logrotate is performed on pacman's log file ( Otherwise it gets very large after some time).
-Detailed information about the update, cleanup and logrotate process is in the log file /tmp/yay-update.log.
+Automatic update system for Arch Linux using Yay. This systemd service will automatically update your system after boot, providing notifications and a summary of updates.
 
-**If you have problems with permissions, the only option is to configure sudo passwordless. This represents a certain security risk and should be carefully considered.
-I just use my PC alone and I know what I'm doing. I've never had any problems without a sudo password.**
-Make sudo passwordless:
+## Features
+
+- **Automatic Updates**: System updates automatically after boot
+- **Visual and Audio Notifications**: Get notifications with sounds for different events
+- **Update Summary**: Detailed summary of all updated packages
+- **Configurable**: Easy to configure through a config file
+- **Cache Cleaning**: Automatically cleans pacman and yay cache
+- **Log Rotation**: Performs log rotation on pacman logs
+
+## Requirements
+
+The following packages are required:
+- `yay`: For AUR package management
+- `zenity`: For displaying the updates summary
+- `libnotify`: For desktop notifications
+- `beep`: For audio alerts
+- `logrotate`: For log rotation
+
+The installation script will check for these dependencies and offer to install missing packages.
+
+## Installation
+
 ```bash
-sudo visudo
-```
-Add this after the last line (with your username):
-```bash
-lennart ALL=(ALL) NOPASSWD: ALL
-```
-
-## Requirements:
-The following packages need to be installed:
-"zenity", "libnotify", "logrotate" and "beep".
-If you don't have them installed, the install script notices it and will ask you whether you want to install the missing packages now.
-
-### **Is the output from yay in english ? Then you don't have to change anything. If not, then translate the string "there is nothing to do" in yay-update.sh line 33 to your yay's output language first !**
-```bash
-yay -S zenity libnotify beep logrotate
-```
-
-## Installation:
-
-``` bash
 ./install.sh
 ```
 
-Leave a star if you like this good work, that always makes me happy :-)
+The installer will guide you through the process and offers options to install or uninstall.
 
-## Screenshots (Gnome / Wayland):
+## Configuration
 
-Starting system update... - notification after boot:
-![start](start.png)
-System is uptodate ! (It's German language on the screenshots, on GitHub it's all in English):
-![uptodate](noupdate.png)
-Update succesful and 2 packages were updated: - notification and Zenity info dialog
-![successful](updatesuccessful.png)
-3 packages were updated - shown with Zenity info dialog
-![3packages](3packages.png)
-And finally 45 updates:
-![45updates](45updates.png)
+A configuration file is created at `~/.config/yay-autoupdate/config` where you can customize:
 
-2025 Lennart Martens
+- Notification settings
+- Icons and sounds
+- Update behavior
+- Display settings
+- Localization for your language
+
+### Language Configuration
+
+**Important**: If yay's output is not in English, you need to change the `NOTHING_TO_DO_STRING` in the configuration file to match your language's equivalent for "there is nothing to do".
+
+## Sudo Configuration (Optional)
+
+If you encounter permission issues, you may want to configure passwordless sudo. This represents a security risk and should be carefully considered:
+
+```bash
+sudo visudo
+```
+
+Add this line (replace USERNAME with your actual username):
+```
+USERNAME ALL=(ALL) NOPASSWD: ALL
+```
+
+## Logs
+
+Detailed information about updates is stored in `/tmp/yay-update.log`
+
+## Uninstallation
+
+To uninstall:
+```bash
+./install.sh
+```
+Then select option 2 for uninstallation.
+
+## Security Considerations
+
+- This script runs with sudo privileges to perform system updates
+- Consider the security implications of automatic updates and passwordless sudo
+- This is primarily designed for personal desktop systems with a single user
+
+---
+
+2025 Original by Lennart Martens  
+Optimized version with additional features

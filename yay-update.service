@@ -1,14 +1,19 @@
 [Unit]
-Description=Yay System Update by user
+Description=Yay Automatic System Update
 After=network-online.target
 Wants=network-online.target
+StartLimitIntervalSec=500
+StartLimitBurst=5
 
 [Service]
-TimeoutStartSec=infinity
 Type=oneshot
 User=lennart
+# These will be replaced during installation
 Environment=DISPLAY=:0 WAYLAND_DISPLAY=wayland-0 XDG_RUNTIME_DIR=/run/user/1000
 ExecStart=/usr/local/bin/yay-update.sh
+TimeoutStartSec=0
+Restart=on-failure
+RestartSec=30s
 
 [Install]
 WantedBy=multi-user.target
